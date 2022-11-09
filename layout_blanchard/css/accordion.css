@@ -1,0 +1,197 @@
+@charset "UTF-8";
+/**
+ * Accordion v3.3.2
+ * Lightweight and accessible accordion module created in pure Javascript
+ * https://github.com/michu2k/Accordion
+ *
+ * Copyright (c) Michał Strumpf
+ * Published under MIT License
+ */
+
+.ac {
+  background-color: #fff;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #cacaca;
+  box-sizing: border-box;
+  transition: border 0.3s ease-in-out;
+}
+
+.ac:hover {
+  border-top: 1px solid #7943A4;
+  /* border-bottom: 1px solid #7943A4; */
+  color: #7943A4;
+}
+
+.ac .ac-header {
+  margin: 0;
+  padding: 0;
+}
+.ac .ac-trigger {
+  color: #111;
+  text-align: left;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  padding: 41px 0 41px 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  background-color: transparent;
+  transition: 0.25s ease;
+  position: relative;
+  text-decoration: none;
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+}
+
+.ac .ac-trigger:hover {
+  color: #7943A4;
+  border-bottom: 1px solid #7943A4;
+}
+
+.ac .ac-trigger::after {
+  text-align: center;
+  width: 15px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+.ac .ac-trigger:focus .catalog-tabs-item-btn-text-wrap {
+  background-color: #7943A4;
+  color: #fff;
+}
+
+.ac .ac-trigger:focus .catalog-tabs-header-eclipse{
+  background-color: #d1a9f0;
+}
+
+.ac.is-active .ac-trigger {
+  border-top: 1px solid #7943A4;
+  border-bottom: 1px solid #7943A4;
+}
+
+.ac .ac-trigger:hover .catalog-tabs-header-eclipse {
+  background-color: #d1a9f0;
+}
+
+.ac.is-active .ac-trigger .catalog-tabs-header-eclipse {
+  position: absolute;
+  left: 94.5%;
+  top: 50%;
+  transform: translate(0, -50%) rotate(180deg);
+  background-color: #d1a9f0;
+  border: 2px solid #9d5cd0;
+}
+
+.ac .ac-panel {
+  overflow: hidden;
+  transition-property: height, visibility;
+  transition-timing-function: ease;
+}
+.ac .ac-panel .ac-text {
+  font: 15px/24px "Arial", sans-serif;
+  color: #111;
+  padding: 10px;
+  margin: 0;
+}
+.ac.js-enabled .ac-panel {
+  display: none;
+}
+.ac.is-active .ac-panel {
+  display: block;
+}
+
+.ac.is-active .catalog-tabs-empty {
+  display: flex;
+}
+
+.ac .is-active {
+   transform: rotate(180deg)
+}
+
+@media(min-width: 1024px) and (max-width: 1599px) {
+  .ac .ac-trigger {
+    padding: 40px 0 40px 0;
+  }
+
+  .ac .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 89%;
+    top: 50%;
+  }
+
+  .ac.is-active .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 89%;
+    top: 50%;
+    background-color: #d1a9f0;
+    border: 2px solid #9d5cd0;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 1023px) {
+  .ac .ac-trigger {
+    padding: 40px 0 40px 0;
+  }
+
+  .ac .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 93%;
+    top: 50%;
+  }
+
+  .ac.is-active .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 93%;
+    top: 50%;
+    transform: translate(0, -50%) rotate(180deg);
+    background-color: #d1a9f0;
+    border: 2px solid #9d5cd0;
+  }
+}
+
+@media(min-width: 520px) and (max-width: 767px) {
+  .ac .ac-trigger {
+    padding: 29px 0 29px 0;
+  }
+
+  .ac .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 90%;
+    top: 50%;
+  }
+
+  .ac.is-active .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    transform: translate(0, -50%) rotate(180deg);
+    background-color: #d1a9f0;
+    border: 2px solid #9d5cd0;
+  }
+}
+
+@media(min-width: 320px) and (max-width: 519px) {
+  .ac .ac-trigger {
+    padding: 19px 0 19px 0;
+  }
+
+  .ac .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 90%;
+    top: 50%;
+  }
+
+  .ac.is-active .ac-trigger .catalog-tabs-header-eclipse {
+    position: absolute;
+    left: 90%;
+    top: 50%;
+    transform: translate(0, -50%) rotate(180deg);
+    background-color: #d1a9f0;
+    border: 2px solid #9d5cd0;
+  }
+}
